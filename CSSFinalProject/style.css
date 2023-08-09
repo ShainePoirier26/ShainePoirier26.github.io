@@ -1,0 +1,177 @@
+/* Shaine Poirier */
+/* 2023-07-30 */
+/*COMP1054 Final Project*/
+
+body{
+    margin: 0;
+    background-color: #ECAFB5;
+    border: 2px solid #dbb642;
+}
+/*Example of a group selector*/
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+}
+/*Change the font*/
+p, a, li{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+}
+
+/**********************************************************************************/
+/*Style the header*/
+
+header{
+    border-bottom: 2px solid #dbb642;
+}
+nav{
+    position: sticky;
+    top: 0;
+}
+/*Example of direct child selector*/
+header > nav > div{
+    display: flex;
+    max-width: 100%;
+    justify-content: space-between;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    font-size: 2rem;
+    padding: 1rem 2rem;
+}
+/*Example of a nth-child selector */
+a:nth-child(2){
+    display: flex;
+    justify-content: center;
+    flex: 1;
+}
+
+/***************************************************************************************************/
+/*Style the main content*/
+/*Example of a class selector*/
+.bio-container{
+    display: flex;
+    max-width: 100%;
+    padding: 1rem 2rem;
+    border-bottom: 2px solid #dbb642;
+}
+
+.bio{
+    flex: 1;
+    line-height: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 20rem;
+}
+
+.bio > p{
+    width: 50%;
+    text-align: center;
+}
+
+.bio-image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    width: 20rem;
+}
+
+.bio-image img{
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    padding-right: 15rem;
+}
+/*Style the list of skills */
+.skills-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-bottom: 2px solid #dbb642;
+}
+
+.skill-list{
+    list-style: square;
+    padding-top: 1rem;
+}
+
+/*Style the project highlights*/
+
+.project-container{
+    display: flex;
+    border-bottom: 2px solid #dbb642;
+}
+
+.project{
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-right: 2px solid #dbb642;
+}
+
+.project > img{
+    height: 15rem;
+    width: 15rem;
+    border-radius: 50%;
+}
+/*Increase size of the images when hovered */
+.project >img:hover{
+    transform: scale(1.1);
+}
+
+/*Style the contact form*/
+
+.contact-container{
+    text-align: center;
+}
+
+.contact-container input::placeholder{
+    font-style: italic;
+}
+
+/*Make it responsive for phones */
+@media screen and (max-width: 40em) {
+    /* Change to a one column layout*/
+    .bio-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 0;
+    }
+
+    .bio {
+        max-width: 100%;
+        padding: 1rem 2rem;
+        text-align: center;
+    }
+
+    .bio-image {
+        width: 15rem; /* Adjust image width for smaller screens */
+        margin-top: 1rem; /* Add margin to separate image from bio text */
+    }
+    /*Adjust image so it scales*/
+    .bio-image img {
+        height: auto;
+        width: 100%;
+        border-radius: 10px;
+        padding-right: 0;
+    }
+    /*Make the projects stack vertically*/
+    .project-container {
+        flex-direction: column;
+        align-items: center;
+        border-bottom: none;
+    }
+    /*Get rid of the border. Looks better without it when in a column*/
+    .project {
+        border-right: none;
+        margin-bottom: 1rem;
+    }
+}
+
